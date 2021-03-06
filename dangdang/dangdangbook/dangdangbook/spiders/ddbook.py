@@ -7,8 +7,8 @@ class DdbookPySpider(scrapy.Spider):
     allowed_domains = ['http://search.dangdang.com']
     index = 1
     i = 0
-    keywords = ['C语言', 'Python', 'Java', 'JavaScript', 'PHP', '算法', '数据库', '前端', '后端']
-    start_urls = ['http://search.dangdang.com/?key={1}&page_index={2}'.format(keywords[i], index) for index in range(1, 100) for i in range(0, 8)]
+    keywords = '' # 请在此输入要搜索的关键字
+    start_urls = ['http://search.dangdang.com/?key={}&page_index={2}'.format(keywords, index) for index in range(1, 100)]
 
     def parse(self, response):
         Book = DangdangbookItem()
